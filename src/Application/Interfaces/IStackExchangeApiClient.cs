@@ -2,8 +2,8 @@
 
 namespace Domain.Abstractions
 {
-    public interface IStackExchangeApiClient
-    {
+	public interface IStackExchangeApiClient
+	{
 		Task<List<Tag>> GetTags(int expectedTagCount);
 	}
 }

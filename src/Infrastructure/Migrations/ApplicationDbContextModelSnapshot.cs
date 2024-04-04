@@ -9,39 +9,39 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
-    {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
+	[DbContext(typeof(ApplicationDbContext))]
+	partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+	{
+		protected override void BuildModel(ModelBuilder modelBuilder)
+		{
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+			modelBuilder
+				.HasAnnotation("ProductVersion", "8.0.3")
+				.HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+			SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Entities.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+			modelBuilder.Entity("Domain.Entities.Tag", b =>
+				{
+					b.Property<int>("Id")
+						.ValueGeneratedOnAdd()
+						.HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+					SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
+					b.Property<int>("Count")
+						.HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+					b.Property<string>("Name")
+						.IsRequired()
+						.HasMaxLength(200)
+						.HasColumnType("nvarchar(200)");
 
-                    b.HasKey("Id");
+					b.HasKey("Id");
 
-                    b.ToTable("Tags");
-                });
+					b.ToTable("Tags");
+				});
 #pragma warning restore 612, 618
-        }
-    }
+		}
+	}
 }

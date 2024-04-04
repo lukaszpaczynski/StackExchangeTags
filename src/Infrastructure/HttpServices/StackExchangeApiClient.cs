@@ -12,7 +12,7 @@ namespace Infrastructure.HttpServices
 
 		public StackExchangeApiClient()
 		{
-			_httpClient  = new HttpClient(new HttpClientHandler
+			_httpClient = new HttpClient(new HttpClientHandler
 			{
 				AutomaticDecompression = DecompressionMethods.GZip
 			});

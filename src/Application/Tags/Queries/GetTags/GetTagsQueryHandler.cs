@@ -4,17 +4,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Tags.Queries.GetTags
 {
-    public class GetTagsQueryHandler : IRequestHandler<GetTagsQuery, GetTagsResult>
+	public class GetTagsQueryHandler : IRequestHandler<GetTagsQuery, GetTagsResult>
 	{
 		private readonly IApplicationDbContext _context;
 
-        public GetTagsQueryHandler(IApplicationDbContext context)
-        {
+		public GetTagsQueryHandler(IApplicationDbContext context)
+		{
 			_context = context;
-        }
+		}
 
-        public async Task<GetTagsResult> Handle(GetTagsQuery query, CancellationToken cancellationToken)
-        {
+		public async Task<GetTagsResult> Handle(GetTagsQuery query, CancellationToken cancellationToken)
+		{
 			var tags = await _context.Tags.ToListAsync();
 
 			int totalPopulation = tags.Sum(t => t.Count);
@@ -29,5 +29,5 @@ namespace Application.Tags.Queries.GetTags
 
 			return new GetTagsResult(new PaginatedResult<TagDto>(populatedTags));
 		}
-    }
+	}
 }

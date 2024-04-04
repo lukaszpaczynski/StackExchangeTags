@@ -21,11 +21,11 @@ namespace Infrastructure.Database
 		private readonly ILogger<ApplicationDbContextInitialiser> _logger;
 		private readonly ApplicationDbContext _context;
 
-        public ApplicationDbContextInitialiser(ILogger<ApplicationDbContextInitialiser> logger, ApplicationDbContext context)
-        {
-            _logger = logger;
-            _context = context;
-        }
+		public ApplicationDbContextInitialiser(ILogger<ApplicationDbContextInitialiser> logger, ApplicationDbContext context)
+		{
+			_logger = logger;
+			_context = context;
+		}
 
 		public async Task InitialiseAsync()
 		{
